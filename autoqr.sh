@@ -18,6 +18,6 @@ fi
 while IFS= read -r line; do
   link=$(echo "$line" | awk '{print $1}')
   title=$(echo "$line" | awk '{$1=""; print $0}' | xargs)
-  python3 pyz.py "$link" "$title"
+  python3 generate.py "$link" "$title"
 done < "$input_file"
 
